@@ -1,8 +1,11 @@
 import warnings
 warnings.filterwarnings("ignore")
 
-from dotenv import load_dotenv
-load_dotenv()
+import os
+import streamlit as st
+
+os.environ["MISTRAL_API_KEY"] = st.secrets["MISTRAL_API_KEY"]
+os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
 
 import streamlit as st
 from langchain_mistralai import ChatMistralAI
